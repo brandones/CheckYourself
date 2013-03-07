@@ -1,0 +1,23 @@
+{
+   "license": "", 
+   "description": "", 
+   "contributors": [], 
+   "author": "bistenes", 
+   "url": "",
+   "dependencies": [
+      "api-utils",
+      "addon-kit"
+   ],
+   "version": "initial.rev123",
+   "lib": "lib",
+   "fullName": "checkyourself",
+   "main": "main",
+   "id": "jid0-qGaOTj71g8mDCzehhGHWJ408Ays",
+   "name": "checkyourself",
+   "preferences": [{
+      "type": "control",
+      "label": "open preferences page",
+      "name": "openPrefs",
+      "title": "To change preferences:"
+   }]
+}

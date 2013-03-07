@@ -1,0 +1,56 @@
+#container
+{
+   position:absolute;
+   background-color:blue;
+   text-align:center;
+   top:10%
+   left:"50%";
+   width:"600px";
+   marginLeft:"-300px";
+   height:"800px";
+   textAlign:"center";
+   fontFamily:"Tahoma,Geneva,sans-serif"
+   fontWeight:300;
+   lineHeight:1.5;
+}
+
+#urlHeader
+{
+   float:top;
+   display:inline;
+   padding-right:50px;
+}
+
+#timeoutHeader
+{
+   float:top;
+   display:inline;
+   padding-left:50px;
+}
+
+#urls
+{
+   float:left;
+   width:230px;
+}
+
+#timeouts
+{
+   margin-left:250px;
+   width:70px;
+   input
+   {
+      size:4;
+   }
+}
+
+
+#more
+{
+   background:url(plus.png);
+}
+
+#remove
+{
+   background:url(minus.png);
+}

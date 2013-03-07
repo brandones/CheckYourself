@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# quick script to build the xpi and pass it on to the
+# extension auto-installer extension running on port 8888
+
+/opt/addon-sdk/bin/cfx xpi && wget --post-file=checkyourself.xpi http://127.0.0.1:8888/
+
