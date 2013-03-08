@@ -9,11 +9,36 @@
  
 <body>
 <div id="container">
+	<table border="0">
+	<tr>
+		<th id="urlHeader">URL Fragment</th>
+		<th id="timeoutHeader">Block Interval</th>
+	</tr>
+	<tr>
+		<td><a href="#">http://example.com</td>
+		<td>420 minutes <a href="#" class="icon"><i class="icon-minus-sign"></i></td>
+	</tr>
+	<tr>
+		<td><input id="url" placeholder="Enter URL fragment"></td>
+		<td><input id="timeout"> minutes</td>
+	</tr>
+	</table>
+	<div class="clearfix"></div>
+	<a href="#" class="btn" id="more"><i class="icon-plus-sign"></i> Add more</a>
+	<a href="#" class="btn" id="save"><i class="icon-check"></i> Save preferences</a>
+	<!--
    <div id="urlHeader">URL Fragment</div><div id="timeoutHeader">Block Interval</div>
    <div id="urls"></div><div id="timeouts"></div>
    <button id="more"></button>
    <button id="save">Save</button>
+	 -->
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="numeric.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#timeout').numeric();
+});
+</script>
 </body>
- 
 </html>
