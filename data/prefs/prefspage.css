@@ -1,56 +1,66 @@
-#container
-{
-   position:absolute;
-   background-color:blue;
-   text-align:center;
-   top:10%
-   left:"50%";
-   width:"600px";
-   marginLeft:"-300px";
-   height:"800px";
-   textAlign:"center";
-   fontFamily:"Tahoma,Geneva,sans-serif"
-   fontWeight:300;
-   lineHeight:1.5;
+@import url('font-awesome.min.css');
+
+body {
+	font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+	font-size: 1em;
 }
 
-#urlHeader
-{
-   float:top;
-   display:inline;
-   padding-right:50px;
+input {
+	padding: 4px;
+	height: 20px;
+	font-size: 1em;
 }
 
-#timeoutHeader
-{
-   float:top;
-   display:inline;
-   padding-left:50px;
+td, th {
+	padding: 10px;
 }
 
-#urls
-{
-   float:left;
-   width:230px;
+input#url {
+	width: 300px;
 }
 
-#timeouts
-{
-   margin-left:250px;
-   width:70px;
-   input
-   {
-      size:4;
-   }
+input#timeout {
+	width: 40px;
+	text-align: center;
 }
 
-
-#more
-{
-   background:url(plus.png);
+a.icon {
+	text-decoration: none;
+	color: red;
 }
 
-#remove
-{
-   background:url(minus.png);
+a.btn {
+	color: white;
+	font-weight: 300;
+	padding: 10px 20px;
+	text-decoration:none;
+	display: block;
+	text-align: center;
+	margin-left: 12px;
+	float: left;
+	
+	border-radius: 3px;
+}
+
+a#more {
+	border: 1px solid #476691;
+	background: #5d8ee1;
+}
+
+a#more:hover {
+	background: #3e6ad2;
+}
+
+a#save {
+	background: #6C6;
+	border: 1px solid #3c9a3b;
+}
+
+a#save:hover {
+	background: #43ad41;
+}
+
+.clearfix {
+	display: block;
+	clear:both;
 }
