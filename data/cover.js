@@ -1,6 +1,6 @@
-console.log( "cover.js loaded" );
-
 self.port.on( "show", function( data ) {
+
+   var MAX_TIMEOUT_VAL = 2147483647;
 
    while( document.body.firstChild ) {
       document.body.removeChild(document.body.firstChild);
@@ -51,34 +51,40 @@ self.port.on( "show", function( data ) {
     var youlastNode = document.createTextNode("You last visited");
     var urlNode = document.createTextNode(url); 
     var intervalNode = document.createTextNode(intervalText); 
+
     var doyouNode = document.createTextNode("Do you really have to already?");
-    
-    // create button
-    var yesButton = document.createElement("button");
-    yesButton.onclick = function () {
-        self.port.emit("held");
-        document.location.reload();
-    }
-    yesButton.appendChild( document.createTextNode( "Yeah" ));
-    
 
     document.body.appendChild( checkyourselfCover );
     checkyourselfCover.appendChild( textdiv );
     textdiv.appendChild( youlastNode );
-    var linebreak = document.createElement("br");
-    textdiv.appendChild( linebreak );
+    textdiv.appendChild( document.createElement("br") );
     textdiv.appendChild( urlNode );
-    var linebreak = document.createElement("br");
-    textdiv.appendChild( linebreak );
+    textdiv.appendChild( document.createElement("br") );
     textdiv.appendChild( intervalNode );
-    var linebreak = document.createElement("br");
-    textdiv.appendChild( linebreak );
-    var linebreak = document.createElement("br");
-    textdiv.appendChild( linebreak );
+    textdiv.appendChild( document.createElement("br") );
+    textdiv.appendChild( document.createElement("br") );
     textdiv.appendChild( doyouNode );
-    var linebreak = document.createElement("br");
-    textdiv.appendChild( linebreak );
-    var linebreak = document.createElement("br");
-    textdiv.appendChild( linebreak );
-    textdiv.appendChild( yesButton );
+
+    var timeout;
+    if( data.allowPass === "yes" ) {
+       timeout = 0;
+    } else if( data.allowPass === "wait" ) {
+       timeout = 10000;
+    } else { // data.allowPass === "no"
+       timeout = MAX_TIMEOUT_VAL;
+    }
+    setTimeout( function() {
+       
+       // create button
+       var yesButton = document.createElement("button");
+       yesButton.onclick = function () {
+           self.port.emit("held");
+           document.location.reload();
+       }
+       yesButton.appendChild( document.createTextNode( "Yeah" ));
+
+       textdiv.appendChild( document.createElement("br") );
+       textdiv.appendChild( document.createElement("br") );
+       textdiv.appendChild( yesButton );
+    }, timeout );
 });
